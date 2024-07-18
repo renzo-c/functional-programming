@@ -1,5 +1,6 @@
 import once from "./once";
 import onceAndAfter from "./onceAndAfter";
+import printTodoSize, { sumRandomNumbers } from "./point-free-programming-style";
 
 const squeak = (a: string) => console.log(a, "squeak!!");
 const creak = (x: string) => console.log(x, "creak");
@@ -21,3 +22,5 @@ makeSound('door');
 makeSound('door');
 makeSound('door');
 
+printTodoSize();
+sumRandomNumbers();
