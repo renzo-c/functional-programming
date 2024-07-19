@@ -1,3 +1,5 @@
+import fs from "fs";
+
 const numberGenerator = () => {
   return new Promise<number[]>((resolve, reject) => {
     const nums = new Set<number>();
@@ -29,7 +31,7 @@ const methods = {
 
 const url = "https://jsonplaceholder.typicode.com/todos";
 
-// In point-free style, the arguments for each function application are never specified 
+// In point-free style, the arguments for each function application are never specified
 // See (parseDataToJson, getSize) and (numberGenerator processNumbers) operating together
 
 // async examples
@@ -44,7 +46,22 @@ const sumRandomNumbers = async () => {
 };
 
 // sorting examples
+const words = ["mano", "mítico", "musical", "natural", "ñandu", "oasis"];
+const spanishComparison = (a: string, b: string) => a.localeCompare(b, "es");
+console.log("words sorted", words.sort(spanishComparison));
 
+type People = {
+  name: string;
+  age: number;
+};
+const people = [
+  { name: "ricardo", age: 21 },
+  { name: "katia", age: 19 },
+  { name: "steven", age: 64 },
+  { name: "flow", age: 13 },
+];
+const ageComparison = (a: People, b: People) => a.age - b.age;
+console.log("people sorted", people.sort(ageComparison));
 
 export default printTodoSize;
 export { sumRandomNumbers };
