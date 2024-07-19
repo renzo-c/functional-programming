@@ -29,9 +29,10 @@ const methods = {
 
 const url = "https://jsonplaceholder.typicode.com/todos";
 
-// In point-free style the arguments for each function application are never specified 
+// In point-free style, the arguments for each function application are never specified 
 // See (parseDataToJson, getSize) and (numberGenerator processNumbers) operating together
 
+// async examples
 const printTodoSize = () => {
   fetch(url)
     .then(methods.parseDataToJson.bind(methods))
@@ -41,6 +42,9 @@ const printTodoSize = () => {
 const sumRandomNumbers = async () => {
   numberGenerator().then(processNumbers);
 };
+
+// sorting examples
+
 
 export default printTodoSize;
 export { sumRandomNumbers };
