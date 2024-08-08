@@ -23,6 +23,7 @@ const fib2 = (num: number): number => {
   return cache[num];
 };
 
+// as closure
 const fib3 = (() => {
   const cache: number[] = [];
   return (num: number) => {
@@ -39,4 +40,11 @@ const fib3 = (() => {
   };
 })();
 
-export { fib, fib2, fib3 };
+const roundFix2 = (pair: [acc: number, n: number]) => {
+  let [acc, n] = pair;
+  const nRounded = acc > 0 ? Math.ceil(n) : Math.floor(n);
+  acc += n - nRounded;
+  return [acc, nRounded];
+};
+
+export { fib, fib2, fib3, roundFix2 };
